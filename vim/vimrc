@@ -191,6 +191,9 @@ endfunction
 "au BufRead,BufNewFile *_trclog.txt_[0-9][0-9][0-9] set filetype=rctrace
 "au! Syntax rctrace source $HOME/.vim/syntax/rctrace.vim
 
+"au BufRead,BufNewFile MESc.[0-9][0-9][0-9].log set filetype=mesclog
+"au! Syntax mesclog source $VIM/vim80/syntax/mesclog.vim
+
 command! -nargs=0 MakeCFolding :call MakeCFoldingFunc()
 function! MakeCFoldingFunc()
 	syn region CBlock start="{" end="}" transparent fold
