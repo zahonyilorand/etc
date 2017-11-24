@@ -1,6 +1,6 @@
 " Vim syntax file for MESc log files
 
-syn match		LogRow				display "^[ \t]*<[ 0-9\.\:\-]*>[ \t]\[[A-Z]*\][ \t]<[a-zA-Z]*>[ \t].*" contains=LogTime,@LogType,MEScProject,MEScClassText,MEScStarted,MEScFinished,MEScMeasStarted,MEScMeasFinished
+syn match		LogRow				display "^[ \t]*<[ 0-9\.\:\-]*>[ \t]\[[A-Z]*\][ \t]<[a-zA-Z0-9]*>[ \t].*" contains=LogTime,@LogType,MEScProject,MEScClassText,MEScStarted,MEScFinished,MEScMeasStarted,MEScMeasFinished
 syn match		LogTime				display contained "^[ \t]*<[ 0-9\.\:\-]*>" nextgroup=LogType
 syn cluster		LogType				contains=LogTrace,LogDebug,LogInfo,LogTitle,LogWarning,LogError,LogFatal
 syn match		LogTrace			display contained "[ \t]\[TRACE\][ \t]"hs=e-7,he=e-1 nextgroup=MEScProject
@@ -10,7 +10,7 @@ syn match		LogTitle			display contained "[ \t]\[TITLE\][ \t]"hs=e-7,he=e-1 nextg
 syn match		LogWarning			display contained "[ \t]\[WARNING\][ \t]"hs=e-9,he=e-1 nextgroup=MEScProject
 syn match		LogError			display contained "[ \t]\[ERROR\][ \t]"hs=e-7,he=e-1 nextgroup=MEScProject
 syn match		LogFatal			display contained "[ \t]\[FATAL\][ \t]"hs=e-7,he=e-1 nextgroup=MEScProject
-syn match		MEScProject			display contained "<[a-zA-Z]*>[ \t]" nextgroup=MEScClassText
+syn match		MEScProject			display contained "<[a-zA-Z0-9]*>[ \t]" nextgroup=MEScClassText
 syn match		MEScClassText		display contained "[a-zA-Z0-9]*::[^\(]*():.*" contains=MEScClass,MEScFunc
 syn match		MEScClass			display contained "[a-zA-Z0-9]*::" nextgroup=MEScFunc
 syn match		MEScFunc			display contained "[^:\(]*()"
