@@ -142,7 +142,7 @@ function! SetBgForThisLine(var_color)
 
   let s:cmd = ":syn match HiWord".s:call_count." display \"".s:line_esc."\""
   execute s:cmd
-  let s:cmd = ":hi HiWord".s:call_count." ctermbg=".a:var_color
+  let s:cmd = ":hi HiWord".s:call_count." ctermbg=".a:var_color." guibg=".a:var_color
   execute s:cmd
 endfunction
 
